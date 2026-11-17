@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f9fc">
+<title>ГСР — Готові самостійні роботи</title>
+<style>
+:root{--bg:#f6f8fc;--card:#fff;--ink:#182230;--muted:#667085;--line:#e6eaf0;--brand:#5b6cff;--brand2:#eef0ff;--shadow:0 12px 35px rgba(24,34,48,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 20px}
+header{padding:22px 0 10px}.nav{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-size:1.5rem;font-weight:900;letter-spacing:-1px}.logo span{color:var(--brand)}
+.pill{font-size:.78rem;font-weight:700;color:#3d4bd8;background:var(--brand2);padding:6px 11px;border-radius:99px}
+.hero{padding:54px 0 30px}.hero-box{background:linear-gradient(120deg,#fff 10%,#eef1ff 100%);border:1px solid #e5e8ff;border-radius:28px;padding:clamp(25px,5vw,52px);position:relative;overflow:hidden}
+.hero-box:after{content:"ГСР";position:absolute;right:3%;bottom:-45px;font-size:clamp(100px,20vw,220px);font-weight:950;color:rgba(91,108,255,.06);pointer-events:none}
+.eyebrow{color:var(--brand);font-size:.78rem;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+h1{font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.04;letter-spacing:-2px;margin:12px 0 16px;max-width:720px}
+.hero p{color:var(--muted);max-width:620px;margin:0;font-size:1.08rem}
+.stats{display:flex;gap:25px;flex-wrap:wrap;margin-top:27px}.stat strong{display:block;font-size:1.35rem}.stat span{color:var(--muted);font-size:.84rem}
+main{padding:22px 0 70px}.toolbar{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px;margin:16px 0 22px}
+input,select{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:13px;background:#fff;color:var(--ink);font:inherit;outline:none}
+input:focus,select:focus{border-color:var(--brand);box-shadow:0 0 0 3px #5b6cff1a}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 15px}
+h2{font-size:1.35rem;margin:0;letter-spacing:-.4px}.count{color:var(--muted);font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:19px;padding:19px;box-shadow:0 3px 12px rgba(24,34,48,.025);display:flex;flex-direction:column;min-height:220px}
+.card-top{display:flex;justify-content:space-between;gap:8px;align-items:center}.tag{font-size:.75rem;font-weight:750;background:#f1f3f8;color:#4c5668;border-radius:8px;padding:5px 9px}
+.grade{font-size:.75rem;color:#687386}.card h3{font-size:1.08rem;line-height:1.3;margin:15px 0 7px}.card p{margin:0;color:var(--muted);font-size:.9rem}
+.card-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:17px}
+.btn{border:0;border-radius:11px;padding:10px 14px;background:var(--brand);color:white;font-weight:750;font:inherit;font-size:.88rem;cursor:pointer}
+.btn:hover{filter:brightness(.96)}.btn.secondary{background:var(--brand2);color:#3d4bd8}.empty{padding:35px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:18px;grid-column:1/-1}
+footer{border-top:1px solid var(--line);padding:24px 0 38px;color:var(--muted);font-size:.85rem}
+.modal{display:none;position:fixed;inset:0;background:rgba(14,22,38,.55);z-index:5;padding:20px;overflow:auto}
+.modal.open{display:flex;align-items:flex-start;justify-content:center}.dialog{background:white;border-radius:22px;width:min(760px,100%);margin:auto;padding:clamp(20px,4vw,34px);box-shadow:var(--shadow)}
+.dialog-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.dialog h2{font-size:1.55rem}.close{border:0;background:#f1f3f8;border-radius:50%;width:38px;height:38px;font-size:1.2rem;cursor:pointer}
+.meta{color:var(--muted);font-size:.88rem;margin:8px 0 22px}.task{padding:14px 15px;border:1px solid var(--line);border-radius:13px;margin:10px 0;background:#fcfdff}
+.task b{display:block;margin-bottom:5px}.answers{display:none;background:#f3f4ff;border:1px solid #e1e4ff;padding:16px;border-radius:13px;margin-top:16px}.answers.show{display:block}.answers ol{margin:8px 0 0;padding-left:22px}
+.note{font-size:.82rem;color:var(--muted);margin-top:18px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.toolbar{grid-template-columns:1fr 1fr}.toolbar input{grid-column:1/-1}}
+@media(max-width:540px){.wrap{padding:0 15px}.hero{padding-top:28px}.grid{grid-template-columns:1fr}.toolbar{grid-template-columns:1fr}.toolbar input{grid-column:auto}.section-head{align-items:flex-start;flex-direction:column}.card{min-height:190px}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="nav"><div class="logo">ГСР<span>.</span></div><div class="pill">навчальна база · 7–11 класи</div></div>
+</header>
+<section class="hero wrap">
+ <div class="hero-box">
+  <div class="eyebrow">Готові самостійні роботи</div>
+  <h1>Самостійні? <span style="color:#5b6cff">Без паніки.</span></h1>
+  <p>Знаходь тренувальні роботи за класом і предметом, виконуй завдання та перевіряй себе. Просто, зрозуміло, без зайвого.</p>
+  <div class="stats"><div class="stat"><strong>36</strong><span>тренувальних робіт</span></div><div class="stat"><strong>9</strong><span>предметів</span></div><div class="stat"><strong>7–11</strong><span>класи</span></div></div>
+ </div>
+</section>
+<main class="wrap">
+ <div class="section-head"><div><div class="eyebrow">Каталог</div><h2>Знайди свою роботу</h2></div><div class="count" id="count">36 робіт</div></div>
+ <div class="toolbar">
+  <input id="search" type="search" placeholder="🔎 Пошук за темою або назвою..." aria-label="Пошук">
+  <select id="subject"><option value="">Усі предмети</option></select>
+  <select id="grade"><option value="">Усі класи</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select>
+ </div>
+ <div class="grid" id="grid"></div>
+</main>
+<footer><div class="wrap"><b>ГСР.</b> Навчальний проєкт для повторення та самоперевірки.<br>Завдання створені для цього сайту й не є копіями сторінок підручників. Звіряй вимоги та формули зі своєю навчальною програмою.</div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="dialog">
+  <div class="dialog-head"><div><div class="eyebrow" id="modalSubject"></div><h2 id="modalTitle"></h2></div><button class="close" id="close" aria-label="Закрити">×</button></div>
+  <div class="meta" id="modalMeta"></div>
+  <div id="tasks"></div>
+  <button class="btn secondary" id="toggleAnswers">Показати відповіді</button>
+  <div class="answers" id="answers"><b>Відповіді для самоперевірки</b><ol id="answerList"></ol></div>
+  <div class="note">Порада: спочатку виконай завдання самостійно, а тоді відкрий відповіді. У розгорнутих задачах можливі різні способи розв’язання.</div>
+ </div>
+</div>
+<script>
+const works = [
+{ s:"Алгебра",g:7,t:"Цілі числа та дії з ними",d:"Обчислення, порядок дій і текстова задача.",q:["Обчисли: −18 + 7 · 3.","Знайди значення виразу: 48 : (−6) − 5.","Температура була −4 °C, а потім підвищилася на 9 °C. Якою стала температура?"],a:["3","−13","5 °C"]},
+{ s:"Алгебра",g:7,t:"Лінійні рівняння",d:"Розв’язування рівнянь і перевірка кореня.",q:["Розв’яжи: 5x − 7 = 18.","Розв’яжи: 3(x + 2) = 21.","Чи є число 4 коренем рівняння 2x + 1 = 9?"],a:["x = 5","x = 5","Так"]},
+{ s:"Алгебра",g:8,t:"Раціональні вирази",d:"Скорочення дробів і допустимі значення.",q:["Скороти дріб 12a²b / 18ab².","Знайди значення  (x² − 9)/(x − 3) при x = 5.","За якого значення x дріб 4/(x + 2) не має змісту?"],a:["2a/(3b), де a,b ≠ 0","8","x = −2"]},
+{ s:"Алгебра",g:8,t:"Лінійна функція",d:"Функція, графік і значення аргументу.",q:["Для y = 2x − 3 знайди y, якщо x = 4.","Знайди нуль функції y = 5x + 10.","Чи належить точка (2; 1) графіку y = x − 1?"],a:["5","x = −2","Так"]},
+{ s:"Алгебра",g:9,t:"Квадратні рівняння",d:"Дискримінант і корені квадратного рівняння.",q:["Розв’яжи: x² − 5x + 6 = 0.","Обчисли дискримінант рівняння 2x² + 3x − 2 = 0.","Склади квадратне рівняння з коренями 2 і −4."],a:["x = 2; x = 3","D = 25","x² + 2x − 8 = 0"]},
+{ s:"Алгебра",g:10,t:"Степенева функція",d:"Властивості степенів та графіки.",q:["Спрости: a³ · a⁵.","Обчисли: 16^(3/4).","Порівняй 2⁵ і 5²."],a:["a⁸","8","2⁵ = 32 > 25 = 5²"]},
+{ s:"Алгебра",g:10,t:"Тригонометричні вирази",d:"Основні значення синуса й косинуса.",q:["Обчисли sin 30° + cos 60°.","Знайди cos 0° − sin 90°.","Спрости sin²α + cos²α."],a:["1","0","1"]},
+{ s:"Алгебра",g:11,t:"Похідна функції",d:"Правила диференціювання та дотична.",q:["Знайди похідну y = 3x² − 4x + 7.","Обчисли f′(2), якщо f(x) = x³.","Знайди кутовий коефіцієнт дотичної до y = x² у точці x = 3."],a:["y′ = 6x − 4","12","6"]},
+{ s:"Геометрія",g:7,t:"Кути та паралельні прямі",d:"Види кутів і властивості паралельних прямих.",q:["Один із суміжних кутів дорівнює 68°. Знайди другий.","Вертикальний кут дорівнює 47°. Чому дорівнює суміжний із ним кут?","При перетині паралельних прямих січною один відповідний кут 112°. Знайди другий відповідний кут."],a:["112°","133°","112°"]},
+{ s:"Геометрія",g:7,t:"Трикутники",d:"Сума кутів і периметр трикутника.",q:["Два кути трикутника 50° і 60°. Знайди третій.","Сторони трикутника 5 см, 7 см і 8 см. Знайди периметр.","Чи може існувати трикутник зі сторонами 2 см, 3 см і 6 см?"],a:["70°","20 см","Ні"]},
+{ s:"Геометрія",g:8,t:"Чотирикутники",d:"Паралелограм, прямокутник і ромб.",q:["Знайди периметр прямокутника зі сторонами 6 см і 4 см.","Один кут паралелограма 70°. Знайди суміжний кут.","Сторона квадрата 5 см. Знайди його площу."],a:["20 см","110°","25 см²"]},
+{ s:"Геометрія",g:8,t:"Теорема Піфагора",d:"Знаходження сторін прямокутного трикутника.",q:["Катети дорівнюють 6 см і 8 см. Знайди гіпотенузу.","Гіпотенуза 13 см, один катет 5 см. Знайди другий катет.","Чи є трикутник зі сторонами 9, 12, 15 прямокутним?"],a:["10 см","12 см","Так"]},
+{ s:"Геометрія",g:9,t:"Подібність трикутників",d:"Коефіцієнт подібності та пропорції.",q:["Сторони подібних трикутників відносяться як 2:3. Менша сторона 8 см. Знайди відповідну більшу.","Коефіцієнт подібності 4. Як змінюється периметр?","Трикутники подібні з коефіцієнтом 2. Площа меншого 7 см². Знайди площу більшого."],a:["12 см","Збільшується у 4 рази","28 см²"]},
+{ s:"Геометрія",g:9,t:"Коло і круг",d:"Довжина кола, площа круга, центральний кут.",q:["Знайди довжину кола радіуса 3 см.","Знайди площу круга радіуса 4 см.","Який центральний кут відповідає чверті кола?"],a:["6π см","16π см²","90°"]},
+{ s:"Геометрія",g:10,t:"Вектори на площині",d:"Координати та довжина вектора.",q:["Знайди координати вектора AB, якщо A(1; 2), B(4; 6).","Знайди довжину вектора (3; 4).","Обчисли суму векторів (2; −1) і (−3; 5)."],a:["(3; 4)","5","(−1; 4)"]},
+{ s:"Геометрія",g:11,t:"Об’єми тіл",d:"Об’єм призми, циліндра та піраміди.",q:["Знайди об’єм прямокутного паралелепіпеда 2 × 3 × 5 см.","Обчисли об’єм циліндра з r = 2 см і h = 5 см.","Об’єм піраміди з площею основи 12 см² і висотою 6 см."],a:["30 см³","20π см³","24 см³"]},
+{ s:"Хімія",g:7,t:"Фізичні та хімічні явища",d:"Розпізнавання явищ і ознак реакцій.",q:["Визнач: танення льоду — фізичне чи хімічне явище?","Назви дві можливі ознаки хімічної реакції.","Чи утворюється нова речовина під час іржавіння заліза?"],a:["Фізичне","Наприклад, виділення газу, утворення осаду, зміна кольору або виділення тепла","Так"]},
+{ s:"Хімія",g:7,t:"Хімічні формули та валентність",d:"Читання формул і визначення складу речовин.",q:["Скільки атомів Гідрогену містить H₂SO₄?","Запиши формулу води.","Скільки всього атомів у формульній одиниці Ca(OH)₂?"],a:["2","H₂O","5"]},
+{ s:"Хімія",g:8,t:"Кисень і оксиди",d:"Склад оксидів та рівняння реакцій.",q:["Назви формулу вуглекислого газу.","Визнач масову частку Оксигену в MgO (Ar: Mg=24, O=16).","Доповни рівняння: 2Mg + O₂ → ?"],a:["CO₂","40%","2MgO"]},
+{ s:"Хімія",g:8,t:"Кількість речовини",d:"Моль, молярна маса й число частинок.",q:["Обчисли молярну масу H₂O.","Скільки молів міститься у 36 г води? M(H₂O)=18 г/моль.","Яка маса 2 моль CO₂? M=44 г/моль."],a:["18 г/моль","2 моль","88 г"]},
+{ s:"Хімія",g:9,t:"Періодичний закон",d:"Будова атома та періодична система.",q:["Скільки протонів має атом Карбону (порядковий номер 6)?","У якому періоді розташований Натрій (Z=11)?","Який заряд ядра атома Оксигену?"],a:["6","3-й період","+8"]},
+{ s:"Біологія",g:7,t:"Клітина та її органели",d:"Основні частини клітини та їхні функції.",q:["Яка органела відповідає за фотосинтез у рослинній клітині?","Яку функцію виконує клітинна мембрана?","Назви структуру, що зберігає спадкову інформацію в ядрі."],a:["Хлоропласт","Відмежовує клітину та регулює обмін речовин","Хромосоми (ДНК)"]},
+{ s:"Біологія",g:8,t:"Тканини організму",d:"Розпізнавання типів тканин і функцій.",q:["Яка тканина забезпечує скорочення та рух?","Яка тканина проводить нервові імпульси?","Назви основну функцію епітеліальної тканини."],a:["М’язова","Нервова","Захист, покривання поверхонь і вистилання порожнин"]},
+{ s:"Біологія",g:9,t:"Спадковість і мінливість",d:"Гени, алелі та прості схеми успадкування.",q:["Як називається ділянка ДНК, що несе спадкову інформацію про ознаку?","Які алелі називають домінантними?","Схрестили Aa × Aa. Яка ймовірність генотипу aa?"],a:["Ген","Ті, що проявляються у гетерозиготі","25%"]},
+{ s:"Біологія",g:10,t:"Екосистеми та ланцюги живлення",d:"Трофічні рівні та взаємозв’язки.",q:["Склади ланцюг живлення з: лисиця, трава, заєць.","Як називають організми, що утворюють органічні речовини з неорганічних?","Що станеться з чисельністю зайців, якщо різко зросте кількість хижаків?"],a:["Трава → заєць → лисиця","Продуценти","Імовірно, зменшиться"]},
+{ s:"Українська мова",g:7,t:"Частини мови",d:"Розпізнавання самостійних частин мови.",q:["Визнач частину мови слова «швидко».","Знайди прикметник у реченні: «Тихий вечір огорнув місто».","Якою частиною мови є слово «п’ятеро»?"],a:["Прислівник","Тихий","Числівник"]},
+{ s:"Українська мова",g:8,t:"Однорідні члени речення",d:"Розділові знаки та граматичні конструкції.",q:["Розстав розділові знаки: «У саду росли яблуні груші сливи».","Чи потрібна кома: «І дощ і вітер не вщухали»?","Визнач однорідні члени: «Діти співали, танцювали й сміялися»."],a:["У саду росли яблуні, груші, сливи.","Так: І дощ, і вітер не вщухали.","Співали, танцювали, сміялися"]},
+{ s:"Українська мова",g:9,t:"Складнопідрядне речення",d:"Головна й підрядна частини, сполучники.",q:["Знайди підрядну частину: «Я знаю, що ти прийдеш».","Постав кому: «Коли зійшло сонце ми вирушили».","Назви сполучне слово в реченні: «Будинок, який стоїть край дороги, старий»."],a:["«що ти прийдеш»","Коли зійшло сонце, ми вирушили.","який"]},
+{ s:"Українська мова",g:10,t:"Орфографічна норма",d:"Правопис складних слів і подвоєння.",q:["Запиши правильно: пів (яблука).","Обери правильне написання: священний чи священий.","Постав апостроф: бур..ян."],a:["пів яблука","священний","бур’ян"]},
+{ s:"Фізика",g:7,t:"Механічний рух",d:"Швидкість, шлях і час.",q:["Автомобіль проїхав 120 км за 2 год. Знайди середню швидкість.","Пішохід рухався зі швидкістю 4 км/год протягом 3 год. Який шлях пройшов?","У яких одиницях SI вимірюють швидкість?"],a:["60 км/год","12 км","м/с"]},
+{ s:"Фізика",g:8,t:"Тиск і сила тиску",d:"Формули тиску та гідростатичного тиску.",q:["Сила 100 Н діє на площу 2 м². Знайди тиск.","Як зміниться тиск, якщо площу опори зменшити вдвічі за сталої сили?","Яка формула гідростатичного тиску?"],a:["50 Па","Збільшиться вдвічі","p = ρgh"]},
+{ s:"Фізика",g:9,t:"Електричний струм",d:"Закон Ома та електрична потужність.",q:["Знайди силу струму, якщо U = 12 В, R = 4 Ом.","Знайди опір провідника, якщо U = 9 В, I = 0,5 А.","Обчисли потужність за U = 10 В та I = 2 А."],a:["3 А","18 Ом","20 Вт"]},
+{ s:"Фізика",g:10,t:"Закони збереження",d:"Імпульс та механічна енергія.",q:["Обчисли імпульс тіла масою 2 кг, що рухається зі швидкістю 3 м/с.","Яка кінетична енергія тіла масою 2 кг зі швидкістю 4 м/с?","Сформулюй закон збереження механічної енергії для системи без втрат."],a:["6 кг·м/с","16 Дж","Сума кінетичної та потенціальної енергій залишається сталою"]},
+{ s:"Історія",g:7,t:"Київська Русь",d:"Князі, державотворення та культура.",q:["За якого князя відбулося хрещення Русі?","Укажи столицю Русі.","Як називався звід законів, пов’язаний з Ярославом Мудрим?"],a:["Володимир Великий, 988 р.","Київ","«Руська правда»"]},
+{ s:"Історія",g:8,t:"Українські землі у XVI–XVII ст.",d:"Козацтво, унія та суспільні зміни.",q:["У якому році укладено Люблінську унію?","Як називали укріплені поселення козаків за дніпровськими порогами?","Хто очолив Національно-визвольну війну середини XVII ст.?"],a:["1569 р.","Запорозька Січ","Богдан Хмельницький"]},
+{ s:"Історія",g:9,t:"Українська революція 1917–1921",d:"Центральна Рада та державотворення.",q:["Коли було проголошено Українську Народну Республіку III Універсалом?","Хто очолював Українську Центральну Раду?","Який акт проголосив незалежність УНР?"],a:["Листопад 1917 р.","Михайло Грушевський","IV Універсал, січень 1918 р."]},
+{ s:"Географія",g:7,t:"Географічні координати",d:"Широта, довгота та визначення положення.",q:["Яка географічна широта буває на північ від екватора?","Який меридіан має довготу 0°?","Точка має координати 0° широти, 30° сх. д. У якій півкулі за довготою вона розташована?"],a:["Північна широта","Гринвіцький меридіан","У Східній півкулі"]},
+{ s:"Географія",g:8,t:"Клімат і кліматотвірні чинники",d:"Пояси, повітряні маси та чинники клімату.",q:["Назви три основні кліматотвірні чинники.","Який прилад вимірює атмосферний тиск?","Чому біля екватора зазвичай тепліше, ніж біля полюсів?"],a:["Сонячна радіація, циркуляція атмосфери, підстильна поверхня","Барометр","Сонячні промені падають під більшим кутом"]},
+{ s:"Географія",g:9,t:"Населення України",d:"Природний рух, густота та міграції.",q:["Як обчислюють густоту населення?","Що таке урбанізація?","Назви один чинник міграції населення."],a:["Кількість населення поділити на площу території","Зростання ролі міст і частки міського населення","Наприклад, працевлаштування, навчання, безпека або сімейні обставини"]},
+{ s:"Англійська мова",g:7,t:"Present Simple",d:"Ствердження, заперечення та запитання.",q:["Complete: She ___ (play) tennis every Sunday.","Make negative: They like coffee.","Make a question: He lives in London."],a:["plays","They do not (don’t) like coffee.","Does he live in London?"]},
+{ s:"Англійська мова",g:8,t:"Past Simple",d:"Правильні й неправильні дієслова.",q:["Put into Past Simple: We ___ (go) to the park yesterday.","Make negative: I watched a film.","Ask a question: She visited her grandma."],a:["went","I did not (didn’t) watch a film.","Did she visit her grandma?"]},
+{ s:"Англійська мова",g:9,t:"Present Perfect",d:"Досвід і результат дії.",q:["Complete: I ___ never ___ (see) this film.","Choose: She has lived here (for/since) 2020.","Make a question: They have finished the project."],a:["have never seen","since","Have they finished the project?"]},
+{ s:"Англійська мова",g:10,t:"Conditionals",d:"First та Second Conditional.",q:["Complete First Conditional: If it rains, we ___ (stay) at home.","Complete Second Conditional: If I had more time, I ___ (travel).","Choose: If she studies, she (will pass / would pass) the test."],a:["will stay","would travel","will pass"]},
+{ s:"Англійська мова",g:11,t:"Passive Voice",d:"Перетворення активного стану на пасивний.",q:["Change to Passive: They built this bridge in 1990.","Complete: English ___ (speak) in many countries.","Change to Passive: Someone has stolen my bike."],a:["This bridge was built in 1990.","is spoken","My bike has been stolen."]}
+];
+const subjects=[...new Set(works.map(w=>w.s))];
+const $=id=>document.getElementById(id);
+subjects.forEach(s=>{const o=document.createElement("option");o.value=s;o.textContent=s;$("subject").append(o)});
+function render(){
+ const term=$("search").value.trim().toLocaleLowerCase("uk");
+ const sub=$("subject").value, grade=$("grade").value;
+ const filtered=works.filter(w=>(!sub||w.s===sub)&&(!grade||String(w.g)===grade)&&(!term||[w.s,w.t,w.d,...w.q].join(" ").toLocaleLowerCase("uk").includes(term)));
+ $("count").textContent=`${filtered.length} ${filtered.length===1?"робота":"робіт"}`;
+ $("grid").innerHTML="";
+ if(!filtered.length){$("grid").innerHTML='<div class="empty">Нічого не знайдено. Спробуй змінити пошуковий запит або фільтри.</div>';return}
+ filtered.forEach(w=>{
+  const i=works.indexOf(w),card=document.createElement("article");card.className="card";
+  card.innerHTML=`<div class="card-top"><span class="tag">${w.s}</span><span class="grade">${w.g} клас</span></div><h3>${w.t}</h3><p>${w.d}</p><div class="card-bottom"><span class="grade">3 завдання · відповіді</span><button class="btn" data-open="${i}">Відкрити →</button></div>`;
+  $("grid").append(card);
+ });
+}
+function openWork(i){
+ const w=works[i];$("modalSubject").textContent=w.s;$("modalTitle").textContent=w.t;$("modalMeta").textContent=`${w.g} клас · 3 завдання · тренувальна робота`;
+ $("tasks").innerHTML=w.q.map((q,n)=>`<div class="task"><b>Завдання ${n+1}</b>${q}</div>`).join("");
+ $("answerList").innerHTML=w.a.map(a=>`<li>${a}</li>`).join("");
+ $("answers").classList.remove("show");$("toggleAnswers").textContent="Показати відповіді";
+ $("modal").classList.add("open");document.body.style.overflow="hidden";
+}
+function closeModal(){$("modal").classList.remove("open");document.body.style.overflow=""}
+$("grid").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b)openWork(+b.dataset.open)});
+$("search").addEventListener("input",render);$("subject").addEventListener("change",render);$("grade").addEventListener("change",render);
+$("close").addEventListener("click",closeModal);$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeModal()});
+$("toggleAnswers").addEventListener("click",()=>{const show=$("answers").classList.toggle("show");$("toggleAnswers").textContent=show?"Сховати відповіді":"Показати відповіді"});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+render();
+</script>
+</body></html>
